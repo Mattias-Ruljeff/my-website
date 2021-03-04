@@ -20,8 +20,22 @@ const Projects = () => {
         <div class="carousel-slide">
 
           <div class="carousel-card">
+            <a href="https://github.com/Mattias-Ruljeff/my-website" target="_blank">
+              <img src="../public/img/project-img/my-website.png" alt="Picture of project my homepage">
+            </a>
+            <div id="carousel-card-info">
+              <h1>My website</h1>
+              <div id="carousel-card-technologies">
+                <img src="../public/img/icons/nodejs.png" alt="">
+                <img src="../public/img/icons/javascript.png" alt="">
+              </div>
+              <h3>My own project</h3>
+            </div>
+          </div>
+
+          <div class="carousel-card">
             <a href="https://github.com/Mattias-Ruljeff/All-unsigned" target="_blank">
-              <img src="../public/img/project-img/all-unsigned.jpg" alt="">
+              <img src="../public/img/project-img/all-unsigned.jpg" alt="Picture of project all unsigned">
             </a>
             <div id="carousel-card-info">
               <h1>All-unsigned</h1>
@@ -37,7 +51,7 @@ const Projects = () => {
 
           <div class="carousel-card">
             <a href="https://github.com/Mattias-Ruljeff/Personal-web-desktop" target="_blank">
-            <img src="../public/img/project-img/pwd.jpg" alt="">
+            <img src="../public/img/project-img/pwd.jpg" alt="Picture of project pwd">
             </a>
             <div id="carousel-card-info">
               <h1>Personal web desktop</h1>
