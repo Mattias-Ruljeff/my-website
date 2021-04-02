@@ -430,9 +430,17 @@ body {
 }
 
 #profile-pic img {
-  background-color: #005ce3;
   width: 300px;
   height: 350px;
+}
+
+#profile-pic img:nth-child(2) {
+  position: relative;
+  top: -270px;
+  left: -200px;
+  width: 160px;
+  height: 80px;
+  z-index: 10;
 }
 
 /* ----------- End About ----------- */
@@ -477,6 +485,26 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#form-container input,
+#form-container textarea {
+  opacity: 0.8;
+  transition: 0.3s ease-in;
+}
+
+#form-container input:hover,
+#form-container input:focus,
+#form-container input:active,
+#form-container textarea:hover,
+#form-container textarea:focus,
+#form-container textarea:active {
+  opacity: 1;
+  transition: 0.3s ease-in;
+}
+
+#form-container input[type=submit] {
+  opacity: 1;
 }
 
 #form-container form textarea {
@@ -610,7 +638,7 @@ body {
   }
 
   #header-hero {
-    height: 660px;
+    height: 100%;
   }
 
   /* ----------- Header native ----------- */
@@ -722,9 +750,57 @@ body {
   }
 
   /* ----------- End Hero native ----------- */
+  /* ----------- About native ----------- */
+  #about {
+    width: 100%;
+    height: 100%;
+  }
+
+  #about-card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    border-radius: 0;
+  }
+
+  #about-experience {
+    width: 60%;
+  }
+
+  #about-age {
+    width: 40%;
+  }
+
+  #profile-pic {
+    width: 100%;
+    height: 350px;
+  }
+
+  #profile-pic img {
+    width: 100%;
+    height: 100%;
+  }
+
+  #profile-pic img:nth-child(2) {
+    position: relative;
+    top: -280px;
+    left: -430px;
+    width: 170px;
+    height: 90px;
+    z-index: 10;
+  }
+
+  #about p {
+    height: 100%;
+  }
+
+  /* ----------- About native ----------- */
   /* ----------- CV native ----------- */
   #cv {
-    margin-top: 350px;
+    margin-top: 50px;
   }
 
   #cv-text {
@@ -732,7 +808,6 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background-color: black;
   }
 
   #cv-text h2 {
@@ -751,6 +826,10 @@ body {
     margin-right: 0;
   }
 
+  #cv {
+    flex-direction: column;
+  }
+
   #cv-icons {
     display: flex;
     flex-direction: row;
@@ -760,33 +839,31 @@ body {
     margin-top: 10px;
   }
 
-  #cv-icons img {
-    margin: 10px 10px;
-    width: 50px;
-    height: 50px;
+  #cv-image {
+    margin-top: 50px;
   }
 
   #cv-image img:nth-child(1) {
-    position: absolute;
-    top: 750px;
-    right: 120px;
-    width: 200px;
-    height: 150px;
+    position: relative;
+    top: 0;
+    left: 0px;
+    width: 250px;
+    height: 200px;
   }
 
   #cv-image img:nth-child(2) {
-    position: absolute;
-    top: 800px;
-    right: 50px;
-    width: 200px;
-    height: 150px;
+    position: relative;
+    top: 50px;
+    right: 120px;
+    width: 250px;
+    height: 200px;
   }
 
   /* ----------- End CV native ----------- */
   /* ----------- Project native ----------- */
   #projects {
     flex-direction: row;
-    margin-top: 100px;
+    margin-top: 320px;
     width: 100%;
     height: 550px;
   }
@@ -827,44 +904,6 @@ body {
   }
 
   /* ----------- End Project native ----------- */
-  /* ----------- About native ----------- */
-  #about {
-    width: 100%;
-    height: 100%;
-  }
-
-  #about-card {
-    width: 100%;
-    height: 800px;
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-items: center;
-    border-radius: 0;
-  }
-
-  #about-experience {
-    width: 60%;
-  }
-
-  #about-age {
-    width: 40%;
-  }
-
-  #profile-pic {
-    width: 100%;
-  }
-
-  #profile-pic img {
-    width: 100%;
-    height: 100%;
-  }
-
-  #about p {
-    height: 100%;
-  }
-
-  /* ----------- About native ----------- */
   /* ----------- Contact native ----------- */
   #contact {
     flex-direction: column;
@@ -931,6 +970,24 @@ body {
   }
   to {
     transform: translateX(0);
+  }
+}
+@keyframes slide-from-bottom {
+  from {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes opacity-fade-forward {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 @keyframes background-opacity {

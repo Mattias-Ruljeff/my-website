@@ -4,6 +4,7 @@ const About = () => {
       <div id="about-card">
       <div id="profile-pic">
       <img src="../public/img/mattias_ruljeff-profil.jpg" alt="Profile picture">
+      <img id="glasses" src="../public/img/deal-with-it-glasses.png" alt="Profile picture">
       </div>
       <div id="about-text-container">
         <div id="about-text-myname">

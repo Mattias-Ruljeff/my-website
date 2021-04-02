@@ -33,15 +33,14 @@ const CV = () => {
       
 
         <div id="cv-icons">
-        <img src="../public/img/icons/javascript.png" alt="">
-        <img src="../public/img/icons/firebase.png" alt="">
-        <img src="../public/img/icons/nodejs.png" alt="">
-        <img src="../public/img/icons/webpack.png" alt="">
-        <img src="../public/img/icons/html5.jpg" alt="">
-
-        <img src="../public/img/icons/react.png" alt="">
-        <img src="../public/img/icons/css3.jpg" alt="">
-        <img src="../public/img/icons/flutter.png" alt="">
+        <img src="../public/img/icons/javascript.png" alt="javascript icon">
+        <img src="../public/img/icons/firebase.png" alt="firebase icon">
+        <img src="../public/img/icons/nodejs.png" alt="nodejs icon">
+        <img src="../public/img/icons/webpack.png" alt="webpack icon">
+        <img src="../public/img/icons/html5.jpg" alt="html5 icon">
+        <img src="../public/img/icons/react.png" alt="react icon">
+        <img src="../public/img/icons/css3.jpg" alt="css3 icon">
+        <img src="../public/img/icons/flutter.png" alt="flutter icon">
 
         </div>
       </div>

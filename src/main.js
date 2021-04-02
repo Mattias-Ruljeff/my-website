@@ -21,6 +21,7 @@ const app = async () => {
 
   const headerDesktop = document.querySelector(".desktop");
   const headerNative = document.querySelector(".native");
+  let nativActive = false
 
   window.addEventListener("scroll", () => {
     if (window.innerWidth > 450) {
@@ -32,14 +33,37 @@ const app = async () => {
         headerDesktop.classList.remove("nav-scroll");
         headerDesktop.classList.add("nav-scroll-top");
       }
-    }
-    if (window.scrollY > 50) {
-      headerNative.classList.add("color");
-    }
-    if (window.scrollY == 0) {
-      headerNative.classList.remove("color");
+    } else {
+      nativActive = true
+      if (window.scrollY > 50) {
+
+        headerNative.classList.add("color");
+      }
+      if (window.scrollY == 0) {
+        headerNative.classList.remove("color");
+      }
+
     }
   });
+
+  const glasses = document.querySelector("#glasses")
+  const profileDiv = document.querySelector("#about-card")
+  profileDiv.addEventListener("mouseover", (event) => {
+    if(nativActive){
+      glasses.style.transition = "0.4s ease-out"
+      glasses.style.transform = "translateX(301%)"
+    } else {
+      glasses.style.transition = "0.4s ease-out"
+      glasses.style.transform = "translateX(155%)"
+    }
+
+  })
+  profileDiv.addEventListener("mouseleave", (event) => {
+    glasses.style.transition = "0.4s ease-in"
+    glasses.style.transform = "translateX(0%)"
+  })
+  console.log(glasses)
+
 
   //Load event
 
@@ -119,111 +143,59 @@ const app = async () => {
   // span.onclick = function () {
   //   modal.style.display = "none";
   // };
-
+  
   // // When the user clicks anywhere outside of the modal, close it
   // window.onclick = function (event) {
-  //   if (event.target == modal) {
-  //     modal.style.display = "none";
-  //   }
-  // };
+    //   if (event.target == modal) {
+      //     modal.style.display = "none";
+      //   }
+      // };
+      
+      // TODO - add animation on load
 
-  // TODO - add animation on load
+      const cvDidv = document.querySelector("#cv-text")
+      const cvImages = document.querySelector("#cv-image")
+      const projectDiv = document.querySelector("#projects")
+      const aboutDiv = document.querySelector("#about-card")
 
-  //   const observer1 = new IntersectionObserver((entries) => {
-  //     entries.forEach((entry) => {
-  //       if (entry.intersectionRatio > 0) {
-  //         entry.target.style.animation = `anim1 1.5s forwards ease-out`;
-  //       } else {
-  //         entry.target.style.animation = "none";
-  //       }
-  //     });
-  //   });
+    const observerSlideFromLeft = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio > 0 ) {
+          entry.target.style.animation = `slide-from-left 1s ease-in forwards`;
+          observerSlideFromLeft.unobserve(cvDidv)
+        } else {
+          entry.target.style.animation = "none";
+        }
+      });
+    });
+    const observerSlideFromRight = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio > 0 ) {
+          entry.target.style.animation = `slide-from-right 1s ease-in forwards`;
+          observerSlideFromRight.unobserve(cvImages)
+        } else {
+          entry.target.style.animation = "none";
+        }
+      });
+    });
+    const observerSlideFromBottom = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio > 0 ) {
+          entry.target.style.animation = `slide-from-bottom 1s ease-in forwards`;
+          observerSlideFromBottom.unobserve(projectDiv)
+        } else {
+          entry.target.style.animation = "none";
+        }
+      });
+    });
 
-  //   const observer2 = new IntersectionObserver((entries) => {
-  //     entries.forEach((entry) => {
-  //       if (entry.intersectionRatio > 0) {
-  //         entry.target.style.animation = `anim2 1.5s forwards ease-out`;
-  //       } else {
-  //         entry.target.style.animation = "none";
-  //       }
-  //     });
-  //   });
+    
+    observerSlideFromLeft.observe(cvDidv)
 
-  // const observer3 = new IntersectionObserver(
-  //   (entries) => {
-  //     entries.forEach((entry) => {
-  //       if (entry.intersectionRatio > 0) {
-  //         entry.target.style.animation = `opacity 2s ease-out`;
-  //       } else {
-  //         entry.target.style.animation = "none";
-  //       }
-  //     });
-  //   },
-  //   {
-  //     threshold: 0.2,
-  //   }
-  // );
+    observerSlideFromRight.observe(cvImages)
+    
+    observerSlideFromBottom.observe(projectDiv)
 
-  // const observer4 = new IntersectionObserver(
-  //   (entries) => {
-  //     entries.forEach((entry) => {
-  //       if (entry.intersectionRatio > 0) {
-  //         entry.target.style.animation = `opacity 2s ease-out`;
-  //       } else {
-  //         entry.target.style.animation = "none";
-  //       }
-  //     });
-  //   },
-  //   {
-  //     threshold: 0.2,
-  //   }
-  // );
-
-  //   const observer4 = new IntersectionObserver((entry) => {
-  //     if (entry[0].intersectionRatio > 0) {
-  //       entry[0].target.style.animation = `anim4 2s forwards ease-out`;
-  //     } else {
-  //       entry[0].target.style.animation = "none";
-  //     }
-  //   });
-
-  //   projectItemOdd.forEach((item) => {
-  //     observer1.observe(item);
-  //   });
-
-  //   projectItemEven.forEach((item) => {
-  //     observer2.observe(item);
-  //   });
-
-  // skillCardsEven.forEach((box) => {
-  //   observer3.observe(box);
-  // });
-  // skillCardsOdd.forEach((box) => {
-  //   observer4.observe(box);
-  // });
-
-  //   observer4.observe(imagee);
-
-  //   hamburger.addEventListener("click", () => {
-  //     hamburger.classList.toggle("active");
-  //     mobile_menu.classList.toggle("active");
-  //   });
-
-  //   document.addEventListener("scroll", () => {
-  //     let scroll_position = window.scrollY;
-  //     if (scroll_position > 250) {
-  //       header.style.backgroundColor = "#29323c";
-  //     } else {
-  //       header.style.backgroundColor = "transparent";
-  //     }
-  //   });
-
-  //   menu_item.forEach((item) => {
-  //     item.addEventListener("click", () => {
-  //       hamburger.classList.remove("active");
-  //       mobile_menu.classList.remove("active");
-  //     });
-  //   });
 };
 // Load app
 
