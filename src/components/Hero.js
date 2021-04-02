@@ -6,10 +6,6 @@ const Hero = () => {
         <h1>fullstack developer</h1>
       </div>
       <a href="#contact">Contact me</a>
-
-      <div id="hero-img">
-        <img src="../public/img/computer.png" alt="" />
-      </div>
       <div id="cv-link"></div>
     </section>
   `;

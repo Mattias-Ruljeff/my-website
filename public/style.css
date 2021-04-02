@@ -55,7 +55,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  height: 850px;
+  height: 740px;
 }
 
 /* ----------- Header ----------- */
@@ -191,7 +191,7 @@ body {
 
 #hero-img {
   position: relative;
-  bottom: -100px;
+  bottom: 0;
 }
 
 #hero-img img {
@@ -289,6 +289,7 @@ body {
   width: 100%;
   height: 400px;
   overflow: hidden;
+  box-shadow: 10px 4px 15px 0 rgba(0, 0, 0, 0.1), 0 6px 30px 0 rgba(0, 0, 0, 0.1);
 }
 
 #projects > h1 {
@@ -376,15 +377,16 @@ body {
   justify-content: center;
   width: 100%;
   height: 350px;
-  margin-top: 150px;
+  margin-top: 70px;
 }
 
 #about-card {
-  width: 70%;
+  width: 700px;
   display: flex;
   flex-direction: row;
   border-radius: 10px;
   overflow: hidden;
+  box-shadow: 10px 4px 15px 0 rgba(0, 0, 0, 0.1), 0 6px 30px 0 rgba(0, 0, 0, 0.1);
 }
 
 #about-text-container {
@@ -398,7 +400,13 @@ body {
 #about-text-top {
   display: flex;
   flex-direction: row;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
+}
+
+#about-text-myname {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 25px;
 }
 
 #about-experience {
@@ -504,6 +512,7 @@ body {
   margin-top: 5px;
   font-size: 16px;
   font-weight: 900;
+  cursor: pointer;
 }
 
 /*  Contact modal  */
@@ -723,6 +732,7 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    background-color: black;
   }
 
   #cv-text h2 {
@@ -900,7 +910,7 @@ body {
   50% {
     position: relative;
     bottom: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 10px 4px 15px 0 rgba(0, 0, 0, 0.1), 0 6px 30px 0 rgba(0, 0, 0, 0.1);
   }
   100% {
     position: relative;
@@ -926,7 +936,7 @@ body {
 @keyframes background-opacity {
   from {
     background-color: #f7f7f700;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0);
+    box-shadow: 10px 4px 15px 0 rgba(0, 0, 0, 0.1), 0 6px 30px 0 rgba(0, 0, 0, 0.1);
   }
   to {
     background-color: #f7f7f7b4;

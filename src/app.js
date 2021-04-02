@@ -14,11 +14,11 @@ async function App() {
       <div id="header-hero">
         ${Header()}
         ${Hero()}
+        ${About()}
       </div>
       <div id="content">
         ${CV()}
         ${Projects()}
-        ${About()}
       </div>
       ${Contact()}
       ${Footer()}
